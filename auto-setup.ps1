@@ -33,9 +33,6 @@ winget install --id=Microsoft.Office -e
 Write-Host "If prompted, please complete the Microsoft Office installation manually." -ForegroundColor Yellow
 Write-Host "Microsoft Office installed!" -ForegroundColor Green
 
-winget install --id=Microsoft.Teams -e --silent
-Write-Host "Microsoft Teams installed!" -ForegroundColor Green
-
 Write-Host "Software installation complete! Don't touch anything yet." -ForegroundColor Green
 
 #Configure Network
