@@ -105,10 +105,12 @@ Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer
 -Name "Hidden" -Value 1
 Write-Host "Hidden files will now be shown."
 
-# Set dark mode
+# Set dark mode for apps and system (taskbar, Start menu, Windows apps)
 New-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" `
 -Name "AppsUseLightTheme" -Value 0 -PropertyType DWord -Force
-Write-Host "Dark mode has been set for apps."
+New-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Themes\Personalize" `
+-Name "SystemUsesLightTheme" -Value 0 -PropertyType DWord -Force
+Write-Host "Dark mode has been set for apps, taskbar, Start menu, and system UI." -ForegroundColor Green
 
 # Set taskbar to show small icons
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" `
