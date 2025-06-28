@@ -30,6 +30,8 @@ I honestly was tired of installing things individually, and I found I was instal
 
 ```powershell
 iwr -useb https://raw.githubusercontent.com/Zabenco/win-auto-setup/main/auto-setup.ps1 | iex
+```
+
 
 ## Notes
 
