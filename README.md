@@ -26,7 +26,10 @@ I honestly was tired of installing things individually, and I found I was instal
 ## How to Use
 
 - If on USB Drive: Right-Click => Run with Powershell (as Admin)
-- If no USB Drive, but internet connection: Open Powershell as Admin and type in ""
+- You can run this script on any fresh Windows machine via PowerShell:
+
+```powershell
+iwr -useb https://raw.githubusercontent.com/Zabenco/win-auto-setup/main/auto-setup.ps1 | iex
 
 ## Notes
 
