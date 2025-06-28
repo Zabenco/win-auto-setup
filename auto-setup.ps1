@@ -30,7 +30,6 @@ winget install --id=Zoom.Zoom -e --silent
 Write-Host "Zoom installed!" -ForegroundColor Green
 
 winget install --id=Microsoft.Office -e
-Write-Host "If prompted, please complete the Microsoft Office installation manually." -ForegroundColor Yellow
 Write-Host "Microsoft Office installed!" -ForegroundColor Green
 
 winget install --id=Microsoft.Teams -e --silent
@@ -136,4 +135,7 @@ Write-Host "System preferences applied! Still don't touch anything." -Foreground
 Stop-Transcript
 
 Write-Host "Setup complete. Log saved to $logFile. You may touch the computer." -ForegroundColor Green
-Pause
+
+Write-Host "We will need to restart the computer to finalize changes. Press Enter to restart" -ForegroundColor Yellow
+[void][System.Console]::ReadLine()
+Restart-Computer
