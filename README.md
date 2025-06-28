@@ -45,7 +45,7 @@ powershell -ExecutionPolicy Bypass -Command "iwr -useb https://raw.githubusercon
 
 ## What Happens
 1. Script starts with a friendly prompt and begins logging all activity to .\logs\setup-log-[timestamp].txt.
-2. Installs all predefined software using winget.
+2. Installs all predefined software using 'winget'.
 3. Asks if you’d like to configure network settings:
 * If yes, prompts for adapter, IP, subnet, gateway, DNS
 * If no, skips and continues
