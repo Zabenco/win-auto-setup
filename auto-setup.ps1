@@ -20,7 +20,7 @@ winget install --id=Notepad++.Notepad++ -e --silent
 
 winget install --id=7zip.7zip -e --silent
 
-winget install --id=Adobe.Acrobat.Reader -e --silent
+winget install --id=Adobe.Acrobat.Reader.64-bit -e --silent
 
 winget install --id=Zoom.Zoom -e --silent
 
