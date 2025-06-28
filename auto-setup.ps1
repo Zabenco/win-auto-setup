@@ -15,19 +15,26 @@ Write-Host "Hello, starting the auto-setup..." -ForegroundColor Cyan
 Write-Host "Installing software..." -ForegroundColor Yellow
 
 winget install --id=Google.Chrome -e --silent
+Write-Host "Google Chrome installed!" -ForegroundColor Green
 
 winget install --id=Notepad++.Notepad++ -e --silent
+Write-Host "Notepad++ installed!" -ForegroundColor Green
 
 winget install --id=7zip.7zip -e --silent
+Write-Host "7zip installed!" -ForegroundColor Green
 
 winget install --id=Adobe.Acrobat.Reader.64-bit -e --silent
+Write-Host "Adobe Acrobat installed!" -ForegroundColor Green
 
 winget install --id=Zoom.Zoom -e --silent
+Write-Host "Zoom installed!" -ForegroundColor Green
 
 winget install --id=Microsoft.Office -e
 Write-Host "If prompted, please complete the Microsoft Office installation manually." -ForegroundColor Yellow
+Write-Host "Microsoft Office installed!" -ForegroundColor Green
 
 winget install --id=Microsoft.Teams -e --silent
+Write-Host "Microsoft Teams installed!" -ForegroundColor Green
 
 Write-Host "Software installation complete! Don't touch anything yet." -ForegroundColor Green
 
@@ -116,11 +123,6 @@ Write-Host "Dark mode has been set for apps, taskbar, Start menu, and system UI.
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" `
 -Name "TaskbarSmallIcons" -Value 1
 Write-Host "Taskbar set to use small icons."
-
-# Show This PC on desktop for future troubleshooting
-New-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\HideDesktopIcons\NewStartPanel" `
--Name "{20D04FE0-3AEA-1069-A2D8-08002B30309D}" -Value 0 -PropertyType DWord -Force
-Write-Host "This PC icon will be shown on the desktop."
 
 # Disable Windows tips
 Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" `
