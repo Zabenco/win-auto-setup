@@ -10,6 +10,7 @@ I honestly was tired of installing things individually, and I found I was instal
 
 ## Features
 
+- Single script design, just run one command, or download the ps1 file
 - Installs software via Winget
 - Applies preferred system settings (e.g., setting dark mode, disabling any distracting features)
 - Enables file extensions and hidden folders

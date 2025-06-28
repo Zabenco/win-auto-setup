@@ -1,4 +1,4 @@
-# Create logs folder if it doesn't exist for some reason, entire thing crashes if it doesn't have it and i dont take chances
+# Create logs folder if it doesn't exist. Will be in the same directory as this script.
 $logPath = ".\logs"
 if (!(Test-Path -Path $logPath)) {
     New-Item -ItemType Directory -Path $logPath
