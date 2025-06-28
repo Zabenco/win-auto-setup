@@ -1,5 +1,5 @@
 # Create logs folder if it doesn't exist. Will be in the same directory as this script.
-$logPath = ".\logs"
+$logPath = "c:\Temp\logs"
 if (!(Test-Path -Path $logPath)) {
     New-Item -ItemType Directory -Path $logPath
 }
