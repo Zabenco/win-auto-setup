@@ -137,5 +137,5 @@ Stop-Transcript
 Write-Host "Setup complete. Log saved to $logFile. You may touch the computer." -ForegroundColor Green
 
 Write-Host "We will need to restart the computer to finalize changes. Press Enter to restart" -ForegroundColor Yellow
-[void][System.Console]::ReadLine()
+Read-Host | Out-Null
 Restart-Computer
