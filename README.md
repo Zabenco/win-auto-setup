@@ -1,39 +1,65 @@
-# Custom Windows Auto-Setup
+# Windows Auto-Setup Script
 
-Created this to aid with setting up computers for primarily business settings, but can also set up for residential settings, as I started on it while I ran Ethan's Computer Repair
+A single-script PowerShell automation for setting up Windows 10/11 systems — ideal for IT professionals, field technicians, and sysadmins who want to streamline software installs, apply user preferences, and optionally configure network settings.
 
-## Purpose
-
-I honestly was tired of installing things individually, and I found I was installing the same couple of programs when setting up customer's computers, so I created this to automate the process.
-
--UPDATE- (12/03/2024) With me working at Essential Network Technologies, I changed up the script to now include business based and productivity programs and features instead of a handful of programs for a residential environment.
+---
 
 ## Features
 
-- Single script design, just run one command, or download the ps1 file
-- Installs software via Winget
-- Applies preferred system settings (e.g., setting dark mode, disabling any distracting features)
-- Enables file extensions and hidden folders
-- Can set a static IP or DNS (This is optional)
-- Logs all actions performed
+- Installs common software silently using `winget`:
+  - Google Chrome
+  - Notepad++
+  - 7-Zip
+  - Adobe Acrobat Reader
+  - Zoom
+  - Microsoft Office (manual step)
+  - Microsoft Teams
 
-## Tools I Use
+- Applies system preferences:
+  - Enables dark mode for system + apps
+  - Shows file extensions
+  - Shows hidden files
+  - Uses small taskbar icons
+  - Disables Windows tips
 
-- Powershell
-- Winget
-- Registry Edits
-- Windows built-in utilities
+- Optional network configuration:
+  - Static IP, gateway, subnet, and DNS setup
+  - Adapter selection from available interfaces
 
-## How to Use
+- Creates a timestamped log of everything done
+- Fully self-contained — **no dependencies, no downloads**
 
-- If on USB Drive: Right-Click => Run with Powershell (as Admin)
-- You can run this script on any fresh Windows machine via PowerShell:
+---
+
+## Usage
+
+**Run from PowerShell as Administrator:**
 
 ```powershell
 iwr -useb https://raw.githubusercontent.com/Zabenco/win-auto-setup/main/auto-setup.ps1 | iex
 ```
+Or bypass execution policy:
+```powershell
+powershell -ExecutionPolicy Bypass -Command "iwr -useb https://raw.githubusercontent.com/Zabenco/win-auto-setup/main/auto-setup.ps1 | iex"
+```
+
+## What Happens
+1. Script starts with a friendly prompt and begins logging all activity to .\logs\setup-log-[timestamp].txt.
+2. Installs all predefined software using winget.
+3. Asks if you’d like to configure network settings:
+* If yes, prompts for adapter, IP, subnet, gateway, DNS
+* If no, skips and continues
+4. Applies system-wide preferences for a better user experience.
+5. Script ends with a friendly message and saves the log.
+
+## Why Did I Create This
+As someone who has worked in the field and from office with tech and desktop support, I created this script to save time during the provisioning and settinmg up of post-imaging setups and personal system refreshes. It reflects real workload that I use, just automated in one easy to use file.
+
+## About Me
+My name is Ethan Zabenco
+
+I am an IT Support Technician and aspiring Cybersecurity professional.
+
+LinkedIn: https://www.linkedin.com/in/ezabenco
 
 
-## Notes
-
-Make sure you run "Set-ExecutionPolicy Bypass -Scope Process -Force" before running the program
