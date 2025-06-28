@@ -13,7 +13,6 @@ A single-script PowerShell automation for setting up Windows 10/11 systems — i
   - Adobe Acrobat Reader
   - Zoom
   - Microsoft Office
-  - Microsoft Teams
 
 - Applies system preferences:
   - Enables dark mode for system + apps
